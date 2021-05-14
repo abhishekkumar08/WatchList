@@ -17,7 +17,7 @@ mongoose.connection.once("open", () => {
   console.log("Connected to Database!");
 });
 
-// Allow cross-origin
+// Allow cross-origin requests
 app.use(cors());
 
 app.use(

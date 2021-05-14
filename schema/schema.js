@@ -19,6 +19,13 @@ const MovieType = new GraphQLObjectType({
   }),
 });
 
+const GenreType = new GraphQLObjectType({
+  name: "Genre",
+  fields: () => ({
+    genre: { type: GraphQLString },
+  }),
+});
+
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -37,6 +44,8 @@ const RootQuery = new GraphQLObjectType({
         return Movie.find({});
       },
     },
+
+    
   },
 });
 
