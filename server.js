@@ -4,15 +4,17 @@ const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
+require("dotenv").config();
 
 const app = express();
 
 const DATABASE_URL = process.env.DATABASE_URL;
 
 // Connection to MongoDb Database
-mongoose.connect(
-  "mongodb+srv://Abhishek:A12345678@nodejsproject.efica.mongodb.net/watchList?retryWrites=true&w=majority"
-);
+mongoose.connect(DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 mongoose.connection.once("open", () => {
   console.log("Connected to Database!");
 });
