@@ -14,10 +14,7 @@ const MovieSchema = new Schema({
     type: String,
     require: true,
   },
-  movieId: {
-    type: String,
-    require: true,
-  },
+  
 });
 
 module.exports = mongoose.model('Movie', MovieSchema);
