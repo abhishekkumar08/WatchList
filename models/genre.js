@@ -6,6 +6,9 @@ const GenreSchema = new Schema({
     type: String,
     required: true,
   },
+  genreId: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Genre", GenreSchema);
