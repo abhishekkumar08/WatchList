@@ -21,7 +21,7 @@ const AddMovie = () => {
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const { loading, data } = useQuery(getGenresQuery);
-  // console.log(data);
+  console.log(data);
 
   const handleSubmit = (e) => {
     e.preventDefault();

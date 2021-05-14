@@ -7,7 +7,7 @@ import AddMovie from "./components/addMovie";
 
 // apollo client setup
 const client = new ApolloClient({
-  uri: "/graphql",
+  uri: "http://localhost:5000/graphql",
   cache: new InMemoryCache(),
 });
 
