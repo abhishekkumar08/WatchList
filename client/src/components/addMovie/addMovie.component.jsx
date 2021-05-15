@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { getGenresQuery } from "../queries/queries";
+import { useQuery, useMutation } from "@apollo/client";
+import { getGenresQuery, addMovieMutation } from "../../queries/queries";
 
 const displayGenres = (loading, data) => {
   if (loading) {
@@ -18,14 +18,24 @@ const displayGenres = (loading, data) => {
 
 const AddMovie = () => {
   const [title, setTitle] = useState("");
+  const [id, setId] = useState("");
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const { loading, data } = useQuery(getGenresQuery);
-  console.log(data);
+  const [addMovieMut] = useMutation(addMovieMutation);
+  // console.log(data);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title, genre, description);
+    addMovieMut({
+      variables: {
+        id,
+        title,
+        genre,
+        description,
+      },
+    });
   };
 
   return (
@@ -36,6 +46,14 @@ const AddMovie = () => {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      <div className="field">
+        <label>Id</label>
+        <input
+          type="text"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
         />
       </div>
       <div className="field">

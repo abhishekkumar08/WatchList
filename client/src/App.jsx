@@ -1,9 +1,12 @@
-import "./App.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
 
 // custom components
-import Movie from "./components/movie.component";
-import AddMovie from "./components/addMovie";
+import Movie from "./components/movie/movie.component";
+import AddMovie from "./components/addMovie/addMovie.component";
+import About from "./components/about/about.component";
+import Header from "./components/header/header.component";
 
 // apollo client setup
 const client = new ApolloClient({
@@ -14,13 +17,12 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="container">
-        <h1 id="headingText">Abhishek Movie List 🎥</h1>
-        <div className="movie-container">
-        <Movie />
-        <AddMovie />
-        </div>
-      </div>
+      <Router>
+        <Header />
+        <Route exact path="/" component={Movie} />
+        <Route exact path="/addMovie" component={AddMovie} />
+        <Route exact path="/about" component={About} />
+      </Router>
     </ApolloProvider>
   );
 }

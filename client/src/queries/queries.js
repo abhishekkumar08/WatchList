@@ -20,4 +20,13 @@ const getGenresQuery = gql`
   }
 `;
 
-export { getMoviesQuery, getGenresQuery };
+const addMovieMutation = gql`
+  mutation addMovie($id:ID, $title: String, $genre: String, $description: String) {
+    addMovie(id:$id,title: $title, genre: $genre, description: $description)
+    title
+    genre
+    description
+  }
+`;
+
+export { getMoviesQuery, getGenresQuery, addMovieMutation };

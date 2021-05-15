@@ -64,7 +64,7 @@ const Mutation = new GraphQLObjectType({
       type: MovieType,
       args: {
         id: { type: GraphQLID },
-        title: { type: GraphQLID },
+        title: { type: GraphQLString },
         genre: { type: GraphQLString },
         description: { type: GraphQLString },
       },

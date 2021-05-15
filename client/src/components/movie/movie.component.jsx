@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { getMoviesQuery } from "../queries/queries";
+import { getMoviesQuery } from "../../queries/queries";
 
 const Movie = () => {
   const { loading, error, data } = useQuery(getMoviesQuery);

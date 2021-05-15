@@ -16,7 +16,6 @@ const MovieSchema = new Schema({
   },
   movieId: {
     type: String,
-    require: true,
   },
 });
 
