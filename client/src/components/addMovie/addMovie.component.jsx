@@ -22,17 +22,16 @@ const AddMovie = () => {
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const { loading, data } = useQuery(getGenresQuery);
-  const [addMovieMut] = useMutation(addMovieMutation);
+  const [addMovie] = useMutation(addMovieMutation);
   // console.log(data);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, genre, description);
-    addMovieMut({
+    console.log(title, description);
+    addMovie({
       variables: {
         id,
         title,
-        genre,
         description,
       },
     });
@@ -50,11 +49,7 @@ const AddMovie = () => {
       </div>
       <div className="field">
         <label>Id</label>
-        <input
-          type="text"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-        />
+        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
       </div>
       <div className="field">
         <label>Description</label>

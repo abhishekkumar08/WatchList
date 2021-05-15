@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const GenreSchema = new Schema({
   genre: {
     type: String,
-    required: true,
   },
   genreId: {
     type: String,
