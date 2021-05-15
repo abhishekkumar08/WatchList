@@ -18,7 +18,6 @@ const displayGenres = (loading, data) => {
 
 const AddMovie = () => {
   const [title, setTitle] = useState("");
-  const [id, setId] = useState("");
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const { loading, data } = useQuery(getGenresQuery);
@@ -27,11 +26,11 @@ const AddMovie = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, description);
+    console.log(title, description, genre);
     addMovie({
       variables: {
-        id,
         title,
+        genre,
         description,
       },
     });
@@ -46,10 +45,6 @@ const AddMovie = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-      </div>
-      <div className="field">
-        <label>Id</label>
-        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
       </div>
       <div className="field">
         <label>Description</label>
