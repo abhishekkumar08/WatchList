@@ -3,20 +3,292 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+ 
 }
 
 
-ul {
-  list-style-type: none;
+.nav{
+display:flex;
+background: linear-gradient(135deg, #ffec61, #f321d7); 
+justify-content: space-around;
+padding:20px 0;
+color:rgb(255, 254, 254);
+align-items: center;
 }
-a {
+.ul{
+display:flex;
+list-style: none;
+width:40%;
+justify-content: space-between;
+}
+ .li{
+  border: 2px solid rgb(253, 247, 247);
+  padding: 5px;
+  border-radius: 18.2px;
+}
+.li:hover {
+  color: #ffec61;
+border-color:   #ffec61;
+}
+.flex {
+  color:#fff;
   text-decoration: none;
+  font-size: 1em;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+.container{
+  background: linear-gradient(to right, #6a1ea0, #c31432);
+    margin-top: 150px;
+    margin-left: 400px;
+    align-items: center;
+    font-size: 1.5em;   
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    padding-left: 70px;
+    padding-top: 70px;
+     border-radius: 18.2px;
+  
+}
+.field{
+  padding:5px;
+  
+}
+.inp{
+  margin-left: 7px;
+  height: 25px;
 }
 
-h1 {
-  font-size: 300;
-  line-height: 1.2;
-  margin: 10px 0;
+.main{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn{
+	background: linear-gradient(to right, #9953ca, #ecdd09);
+	width: 100px;
+	height: 40px;
+	border: none;
+	font-size: 1.3rem;
+	color: white;
+	cursor: pointer;
+	border-radius: 0 25px;
+	position: relative;
+	transition: all .6s;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+.btn:hover{
+	border-radius: 25px 0;
+}
+
+.btn::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(to right, #240b36, #c31432);
+	width: 100%;
+	height: 100%;
+	filter: blur(22px);
+	transform: scale(0.9, 0.8) translateY(20px);
+	z-index: -1;
+	opacity: 0;
+	transition: all 0.6s;
+}
+
+.btn:hover::before{
+	opacity: 1;
+}
+
+
+
+
+/*Contactus CSS*/
+.container1 {
+  width: 100wv;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  
+}
+
+.contact {
+  width: 500px;
+  height: 90%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  padding: 20px 0;
+}
+
+.contact__title {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+  text-transform: uppercase;
+  color: #ffffff;
+  height: 20%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.contact__title:after,
+.contact__title:before {
+  position: absolute;
+  width: 30%;
+  height: 1px;
+  background-color: #fff;
+  content: "";
+  display: block;
+}
+
+.contact__title::after {
+  right: 0;
+}
+
+.contact__content {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+}
+
+.contact__content > div {
+  position: relative;
+}
+
+#name,
+#email,
+#subject,
+textarea {
+  background-color: #fff;
+  color: #111;
+  font-size: 16px;
+  height: 60px;
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  display: block;
+  padding: 0px 15px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  outline: none;
+  border: 2px solid #fff;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+textarea {
+  resize: none;
+  padding: 10px 20px;
+  height: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+label1 {
+  position: absolute;
+  padding-left: 5px;
+  top: 19px;
+  left: 10px;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  font-size: 20px;
+  color: red;
+}
+
+.msg_lbl {
+  bottom: 80px;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#name:focus ~ label,
+#name:valid ~ label,
+#email:focus ~ label,
+#email:valid ~ label,
+#subject:focus ~ label,
+#subject:valid ~ label {
+  transform: translateY(-35px) translateX(-20px);
+  color: #fff;
+  font-size: 14px;
+}
+
+textarea:focus ~ label,
+textarea:valid ~ label {
+  transform: translateY(-35px) translateX(-20px);
+  color: #fff;
+  font-size: 14px;
+}
+
+#name:focus,
+#name:valid,
+#email:focus,
+#email:valid,
+#subject:focus,
+#subject:valid,
+textarea:focus,
+textarea:valid {
+  border-left: 10px solid #ff6a00;
+}
+
+.btn1 {
+  margin-left: 95px;
+  width: 160px;
+  height: 40px;
+  background: rgb(0, 78, 146);
+  background-image: -webkit-linear-gradient(
+    top,
+    rgb(0, 78, 146),
+    rgb(0, 4, 40)
+  );
+  background-image: -moz-linear-gradient(top, rgb(0, 78, 146), rgb(0, 4, 40));
+  background-image: -ms-linear-gradient(top, rgb(0, 78, 146), rgb(0, 4, 40));
+  background-image: -o-linear-gradient(top, rgb(0, 78, 146), rgb(0, 4, 40));
+  background-image: -webkit-gradient(to bottom, rgb(0, 78, 146), rgb(0, 4, 40));
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 10px 0 #000000;
+  -moz-box-shadow: 1px 1px 10px 0 #000000;
+  box-shadow: 1px 1px 10px 0 #000000;
+  text-shadow: 1px 1px 10px #000000;
+  border: solid rgb(255, 106, 0) 2px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.btn1:hover {
+  border: solid #fff 2px;
+  background: rgb(0, 4, 40);
+  background-image: -webkit-linear-gradient(
+    top,
+    rgb(0, 4, 40),
+    rgb(0, 78, 146)
+  );
+  background-image: -moz-linear-gradient(top, rgb(0, 4, 40), rgb(0, 78, 146));
+  background-image: -ms-linear-gradient(top, rgb(0, 4, 40), rgb(0, 78, 146));
+  background-image: -o-linear-gradient(top, rgb(0, 4, 40), rgb(0, 78, 146));
+  background-image: -webkit-gradient(to bottom, rgb(0, 4, 40), rgb(0, 78, 146));
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
 }

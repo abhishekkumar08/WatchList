@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { getGenresQuery, addMovieMutation } from "../../queries/queries";
+import "../../App.css";
 
 const displayGenres = (loading, data) => {
   if (loading) {
@@ -37,18 +38,19 @@ const AddMovie = () => {
   };
 
   return (
+    <div className="container">
     <form id="add-title" onSubmit={handleSubmit}>
       <div className="field">
         <label>Movie Name:</label>
-        <input
+        <input className= "inp"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
       <div className="field">
-        <label>Description</label>
-        <input
+        <label>Description:</label>
+        <input className= "inp"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -56,13 +58,17 @@ const AddMovie = () => {
       </div>
       <div className="field">
         <label>Genre:</label>
-        <select value={genre} onChange={(e) => setGenre(e.target.value)}>
+        <select  className= "inp" value={genre} onChange={(e) => setGenre(e.target.value)}>
           <option>Select Genre</option>
           {displayGenres(loading, data)}
         </select>
       </div>
-      <button>+</button>
+      <div className="field">
+        <label></label>
+      <button className= "btn">Add</button>
+      </div>
     </form>
+    </div>
   );
 };
 

@@ -1,0 +1,11 @@
+.MovieList{
+    color: rgb(192, 226, 43);
+    background: linear-gradient(to right, #6a1ea0, #c31432);
+    margin-top: 15px;
+    margin-left: 500px;
+    align-items: center;
+    font-size: 1em;   
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+}
