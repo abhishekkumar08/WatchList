@@ -8,10 +8,10 @@ require("dotenv").config();
 
 const app = express();
 
-const DATABASE_URL = process.env.DATABASE_URL;
+//const DATABASE_URL = process.env.DATABASE_URL;
 
 // Connection to MongoDb Database
-mongoose.connect(DATABASE_URL, {
+mongoose.connect("mongodb+srv://akritimongodb:Layershot@11@cluster0.ut3ts.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

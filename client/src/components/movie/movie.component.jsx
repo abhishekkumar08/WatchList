@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { getMoviesQuery } from "../../queries/queries";
+import "./movie.style.css";
 
 const Movie = () => {
   const { loading, error, data } = useQuery(getMoviesQuery);
@@ -8,7 +9,7 @@ const Movie = () => {
   if (error) return <p>Something Went Wrong</p>;
 
   return data.movies.map((movie) => {
-    return <li key={movie.id}>{movie.title}</li>;
+    return <div className="MovieList"><li key={movie.id}>{movie.title}</li></div>;
   });
 };
 

@@ -1,11 +1,13 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route,Switch} from "react-router-dom";
 import "./App.css";
+import Contact from "./components/Contact/contact.component";
+import Nav from "./components/header/header.component";
 
 // custom components
 import Movie from "./components/movie/movie.component";
 import AddMovie from "./components/addMovie/addMovie.component";
-import About from "./components/about/about.component";
+import About from "./components/Contact/contact.component";
 import Header from "./components/header/header.component";
 
 // apollo client setup
@@ -18,11 +20,16 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Header />
-        <Route exact path="/" component={Movie} />
-        <Route exact path="/addMovie" component={AddMovie} />
-        <Route exact path="/about" component={About} />
-      </Router>
+      <Header/>
+      <Route path='/' exact={true} component={Movie} />
+      <Switch>
+        <Route path="/Contact" component ={Contact}/>
+        <Route path="/movie.component" exact component={Movie}/>
+        <Route path="/addMovie" exact component={AddMovie}/>
+        
+      </Switch>
+      
+    </Router>
     </ApolloProvider>
   );
 }
